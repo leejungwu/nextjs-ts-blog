@@ -12,7 +12,7 @@ const Editor = (props: any) => {
             <CKEditor
                 editor={ClassicEditor}
                 data={props.content ? props.content : "<p>Hello from CKEditor 5!</p>"}
-                onChange={(editor: any) => {
+                onChange={(event:any, editor: any) => {
                     const data = editor.getData();
                     props.setContent(data);
                 }}

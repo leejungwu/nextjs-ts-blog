@@ -33,10 +33,10 @@ if (process.env.NODE_ENV === 'production') {  // 개발
     app.use(helmet());
     app.use(cors({
         origin: [
-            'https://www.jdoubleu.me', 
-            'http://www.jdoubleu.me', 
-            'http://jdoubleu.me', 
-            'https://jdoubleu.me',
+            'https://www.jdoublew.me', 
+            'http://www.jdoublew.me', 
+            'http://jdoublew.me', 
+            'https://jdoublew.me',
             'http://localhost:3000'
         ],
         credentials: true,
@@ -60,7 +60,7 @@ app.use(session({
     proxy: true,
     cookie: {
         httpOnly: true,
-        secure: false,  // 배포할때는 true
+        secure: false,  // 배포할때는 true, http에서는 false
         domain: process.env.NODE_ENV === 'production' ? '.jdoubleu.me' : undefined
     },
 }));
@@ -72,6 +72,6 @@ app.use('/post', postRouter);
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
 
-app.listen(5000, () => {
+app.listen(80, () => {
     console.log('Server running!!')
 });
