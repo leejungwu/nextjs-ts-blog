@@ -61,7 +61,7 @@ app.use(session({
     cookie: {
         httpOnly: true,
         secure: false,  // 배포할때는 true, http에서는 false
-        domain: process.env.NODE_ENV === 'production' ? '.jdoubleu.me' : undefined
+        domain: process.env.NODE_ENV === 'production' ? '.jdoublew.me' : undefined
     },
 }));
 app.use(passport.initialize());

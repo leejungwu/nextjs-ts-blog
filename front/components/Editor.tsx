@@ -14,6 +14,7 @@ const Editor = (props: any) => {
                 data={props.content ? props.content : "<p>Hello from CKEditor 5!</p>"}
                 onChange={(event:any, editor: any) => {
                     const data = editor.getData();
+                    console.log(event);
                     props.setContent(data);
                 }}
                 style={{ minHeight: '500px' }}

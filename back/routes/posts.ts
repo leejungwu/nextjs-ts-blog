@@ -12,7 +12,11 @@ router.get('/', async (req:Request, res:Response, next) => {  // POST /post/comm
             order: [['createdAt', 'DESC']],
             attributes: {               
                 exclude: ['content']   
-            }, 
+            },
+            include: [{
+                model: Comment,
+                attributes: ['id'],
+            }] 
         });
         res.status(200).json(posts);
     } catch (error) {

@@ -36,12 +36,21 @@ const Wrapper = styled.div`
 const Index: React.FunctionComponent = () => {
   const dispatch = useDispatch();
   const router = useRouter();
-  const { singlePost, mainPosts, pageSize, currentPage, start, end, loadPostsLoading } = useSelector((state: RootState) => state.post);
+  const { singlePost, mainPosts, pageSize, currentPage, start, end, loadPostsLoading, addCommentDone } = useSelector((state: RootState) => state.post);
 
   useEffect(() => {
     dispatch({
       type: LOAD_POSTS_REQUEST,
     });
+  },[])
+
+  useEffect(() => {
+    if (addCommentDone) {
+      dispatch({
+        type: LOAD_POST_REQUEST,
+        data: '1' as string,
+    });
+    }
   },[])
 
   const Posts = mainPosts.filter((v: any) => v.id !== 1);

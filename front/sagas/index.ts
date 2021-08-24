@@ -4,7 +4,7 @@ import axios from 'axios';
 import postSaga from './post';
 import userSaga from './user';
 
-axios.defaults.baseURL = 'http://api.jdoublew.me';
+axios.defaults.baseURL = 'http://localhost:80';
 // axios.defaults.baseURL = 'https://api.jdoublew.me';
 
 axios.defaults.withCredentials = true;
