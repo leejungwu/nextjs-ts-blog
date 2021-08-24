@@ -15,12 +15,15 @@ router.get('/', async (req:Request, res:Response, next) => {  // GET /posts
             },
             include: [{
                 model: Comment,
-                attributes: ['id','nickname'],
-            },{
-                model: User, // 좋아요 누른 사람
+                include: [{
+                  model: User,
+                  attributes: ['id', 'nickname'],
+                }],
+              },{
+                model: User,
                 as: 'Likers',
                 attributes: ['id'],
-              }] 
+            }] 
         });
         res.status(200).json(posts);
     } catch (error) {
