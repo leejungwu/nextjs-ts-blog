@@ -72,6 +72,6 @@ app.use('/post', postRouter);
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
 
-app.listen(80, () => {
+app.listen(4000, () => {
     console.log('Server running!!')
 });
