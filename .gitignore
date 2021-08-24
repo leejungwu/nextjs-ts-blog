@@ -1,0 +1,4 @@
+node_modules
+.env
+ts-next-blog.pem
+.next

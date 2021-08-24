@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "es2017"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "esnext",
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx", "reducers/index.js", "store/configureStore.js", "pages/userprofile.js", "pages/signup.js", "pages/project.js", "pages/profile.js", "pages/login.js", "pages/index.js", "pages/_app.js", "pages/category/react.js", "pages/category/nodejs.js", "pages/category/javascript.js", "pages/category/algorithm.js", "hooks/useInput.js", "components/UserMenu.js", "components/NicknameEditForm.js", "components/LoginMenu.js", "components/Layout.js", "reducers/index.tss", "sagas", "pages/_document.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

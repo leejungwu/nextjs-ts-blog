@@ -1,0 +1,17 @@
+export interface IUser {
+    loadMyInfoDone: boolean,
+    loadMyInfoError: any,
+    logInLoading: boolean,
+    logInDone: boolean,
+    logInError: any,
+    logOutLoading: boolean,
+    logOutDone: boolean,
+    logOutError: any,
+    signUpDone: boolean,
+    signUpError: any,
+    changeNicknameDone: boolean,
+    changeNicknameError: any,
+    me: any,
+    signUpData: any,
+    loginData: any,
+}
