@@ -63,7 +63,7 @@ const SignUp = () => {
       type: SIGN_UP_REQUEST,
       data: { email, password, nickname },
     });
-  }, [email, password, passwordCheck]);
+  }, [email, password, passwordCheck, nickname]);
 
   const formItemLayout = {
     labelCol: {

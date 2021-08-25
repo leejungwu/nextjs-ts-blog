@@ -38,8 +38,6 @@ if (process.env.NODE_ENV === 'production') {  // 개발
             'http://jdoub.me', 
             'https://jdoub.me',
             'http://localhost:3000',
-            'http://localhost:80',
-            'http://3.36.219.232',
         ],
         credentials: true,
     }));
