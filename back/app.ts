@@ -62,7 +62,7 @@ app.use(session({
     proxy: true,
     cookie: {
         httpOnly: true,
-        secure: false,  // 배포할때는 true, http에서는 false
+        secure: true,  // 배포할때는 true, http에서는 false
         domain: process.env.NODE_ENV === 'production' ? '.jdoub.me' : undefined
     },
 }));
@@ -74,6 +74,6 @@ app.use('/post', postRouter);
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
 
-app.listen(80, () => {
+app.listen(4000, () => {
     console.log('Server running!!')
 });
