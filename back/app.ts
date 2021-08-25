@@ -33,11 +33,13 @@ if (process.env.NODE_ENV === 'production') {  // 개발
     app.use(helmet());
     app.use(cors({
         origin: [
-            'https://www.jdoublew.me', 
-            'http://www.jdoublew.me', 
-            'http://jdoublew.me', 
-            'https://jdoublew.me',
-            'http://localhost:3000'
+            'https://www.jdoub.me', 
+            'http://www.jdoub.me', 
+            'http://jdoub.me', 
+            'https://jdoub.me',
+            'http://localhost:3000',
+            'http://localhost:80',
+            'http://3.36.219.232',
         ],
         credentials: true,
     }));
@@ -72,6 +74,6 @@ app.use('/post', postRouter);
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
 
-app.listen(4000, () => {
+app.listen(80, () => {
     console.log('Server running!!')
 });
