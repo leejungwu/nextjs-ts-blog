@@ -9,6 +9,8 @@ export interface IUser {
     logOutError: any,
     signUpDone: boolean,
     signUpError: any,
+    signOutDone: boolean,
+    signOutError: any, 
     changeNicknameDone: boolean,
     changeNicknameError: any,
     me: any,

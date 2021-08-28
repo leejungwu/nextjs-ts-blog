@@ -13,6 +13,8 @@ export const initialState = {
     logOutError: null,
     signUpDone: false,
     signUpError: null,
+    signOutDone: false,
+    signOutError: null,
     changeNicknameDone: false,
     changeNicknameError: null,
     me: null,
@@ -35,6 +37,10 @@ export const LOG_OUT_FAILURE = 'LOG_OUT_FAILURE';
 export const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
+
+export const SIGN_OUT_REQUEST = 'SIGN_OUT_REQUEST';
+export const SIGN_OUT_SUCCESS = 'SIGN_OUT_SUCCESS';
+export const SIGN_OUT_FAILURE = 'SIGN_OUT_FAILURE';
 
 export const CHANGE_NICKNAME_REQUEST = 'CHANGE_NICKNAME_REQUEST';
 export const CHANGE_NICKNAME_SUCCESS = 'CHANGE_NICKNAME_SUCCESS';
@@ -108,6 +114,16 @@ const reducer = (state: IUser | undefined = initialState, action: AnyAction) => 
                 break;
             case SIGN_UP_FAILURE:
                 draft.signUpError = action.error;
+                break;
+            case SIGN_OUT_REQUEST:
+                draft.signOutDone = false;
+                draft.signOutError = null;
+                break;
+            case SIGN_OUT_SUCCESS:
+                draft.signOutDone = true;
+                break;
+            case SIGN_OUT_FAILURE:
+                draft.signOutError = action.error;
                 break;
             case CHANGE_NICKNAME_REQUEST:
                 draft.changeNicknameDone = false;

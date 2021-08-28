@@ -9,6 +9,13 @@ const Post = db.Post;
 
 const router = express.Router();
 
+type RequestWithUser = Request & {user: any};
+function assertHasUser(req: Request): asserts req is RequestWithUser {
+    if (!( "user" in req)) {
+        throw new Error("Request object without user found unexpectedly");
+    }
+}
+
 router.get('/', async (req:any, res:Response, next) => {
     try {
         if (req.user) {
@@ -92,6 +99,7 @@ router.post('/', isNotLoggedIn, async (req:Request, res:Response, next:NextFunct
     }
 });
 
+
 router.patch('/nickname', isLoggedIn, async (req:any, res, next) => {
     try {
         await User.update({
@@ -106,8 +114,17 @@ router.patch('/nickname', isLoggedIn, async (req:any, res, next) => {
     }
 })
 
-router.delete('/', (req:Request, res:Response) => {
-    res.json({ id:1 });
+router.delete('/', isLoggedIn, async (req:Request, res:Response) => {
+    try {
+        assertHasUser(req);
+        await User.destory({
+            where: {
+                UserId: req.user.id,
+            }
+        })
+    } catch (error) {
+        console.error
+    }
 })
 
 export default router;

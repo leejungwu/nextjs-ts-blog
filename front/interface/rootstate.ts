@@ -10,6 +10,8 @@ export interface RootState {
         logOutError: any,
         signUpDone: boolean,
         signUpError: any,
+        signOutDone: boolean,
+        signOutError: any, 
         changeNicknameDone: boolean,
         changeNicknameError: any,
         me: any,

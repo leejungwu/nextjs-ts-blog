@@ -4,7 +4,9 @@ import {
     LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, 
     LOG_OUT_REQUEST, LOG_OUT_SUCCESS, LOG_OUT_FAILURE, 
     SIGN_UP_REQUEST, SIGN_UP_SUCCESS, SIGN_UP_FAILURE, 
-    LOAD_MY_INFO_SUCCESS, LOAD_MY_INFO_FAILURE, LOAD_MY_INFO_REQUEST, CHANGE_NICKNAME_REQUEST, CHANGE_NICKNAME_SUCCESS, CHANGE_NICKNAME_FAILURE, 
+    SIGN_OUT_REQUEST, SIGN_OUT_SUCCESS, SIGN_OUT_FAILURE, 
+    LOAD_MY_INFO_SUCCESS, LOAD_MY_INFO_FAILURE, LOAD_MY_INFO_REQUEST, 
+    CHANGE_NICKNAME_REQUEST, CHANGE_NICKNAME_SUCCESS, CHANGE_NICKNAME_FAILURE, 
 } from '../reducers/user';
 
 function loadMyInfoAPI() {
@@ -86,6 +88,26 @@ function* signUp(action:any):any {
     }
 }
 
+function signOutAPI(data:any) {
+    return axios.post('/user', data)
+}
+
+function* signOut(action:any):any {
+    try {
+        const result = yield call(signOutAPI, action.data);
+        console.log(result);
+        yield put({
+            type: SIGN_OUT_SUCCESS,
+        })
+    } catch (err){
+        console.error(err);
+        yield put({
+            type: SIGN_OUT_FAILURE,
+            error: err.response.data,
+        })
+    }
+}
+
 function ChangeNicknameAPI(data:any) {
     return axios.patch('/user/nickname', { nickname: data });
 }
@@ -126,6 +148,10 @@ function* watchSignUp() {
     yield takeEvery(SIGN_UP_REQUEST, signUp);
 }
 
+function* watchSignOut() {
+    yield takeEvery(SIGN_OUT_REQUEST, signOut);
+}
+
 export default function* userSaga() {
     yield all([
         fork(watchChangeNickname),
@@ -133,5 +159,6 @@ export default function* userSaga() {
         fork(watchLogIn),
         fork(watchLogOut),
         fork(watchSignUp),
+        fork(watchSignOut),
     ])
 }

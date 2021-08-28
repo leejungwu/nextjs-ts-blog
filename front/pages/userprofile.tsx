@@ -6,7 +6,7 @@ import { Form, Button, Input } from 'antd';
 
 import useInput from '../hooks/useInput';
 import { RootState } from '../interface/rootstate'
-import { CHANGE_NICKNAME_REQUEST, LOAD_MY_INFO_REQUEST } from '../reducers/user';
+import { CHANGE_NICKNAME_REQUEST, LOAD_MY_INFO_REQUEST, SIGN_OUT_REQUEST } from '../reducers/user';
 import { LOAD_POSTS_REQUEST } from '../reducers/post';
 import wrapper from '../store/configureStore';
 import { END } from 'redux-saga';
@@ -46,6 +46,15 @@ const UserProfile: React.FunctionComponent = () => {
       })
     }, [nickname]);
 
+    const onSignOut = useCallback(() => {
+      var answer = confirm('정말 탈퇴하시겠습니까?');
+      if (answer == true) {
+        dispatch({
+          type: SIGN_OUT_REQUEST,
+        });
+      }
+    }, []);
+
     const layout = {
       labelCol: { span: 3 },
       wrapperCol: { span: 10 },
@@ -63,37 +72,38 @@ const UserProfile: React.FunctionComponent = () => {
         <Layout>
           <Wrapper>
             <h2 style={{ textAlign: 'center' }}>설정</h2>
-              <form onSubmit={onSubmit}>
-                <h4 style={{ margin: '25px'}}>개인정보 수정</h4>
-                <Form
-                {...layout}
-                name="basic"
-                initialValues={{ remember: true }}
-                onFinish={onSubmit}
-                >
-                  <Form.Item
-                    label="현재 이름"
-                    name="user-nickname"
-                  >
-                    <Input name="user-nickname" placeholder={me?.nickname!} readOnly required />
-                  </Form.Item>
+            <h4 style={{ margin: '25px'}}>개인정보 수정</h4>
+            <Form
+            {...layout}
+            name="basic"
+            initialValues={{ remember: true }}
+            onFinish={onSubmit}
+            >
+              <Form.Item
+                label="현재 이름"
+                name="user-nickname"
+              >
+                <Input name="user-nickname" placeholder={me?.nickname!} readOnly required />
+              </Form.Item>
 
-                  <Form.Item
-                    label="바꿀 이름"
-                    name="new-nickname"
-                    rules={[{ required: true, message: '새로운 별명을 입력하세요' }]}
-                  >
-                    <Input name="new-nickname" value={nickname} onChange={onChangeNickname} required />
-                  </Form.Item>
+              <Form.Item
+                label="바꿀 이름"
+                name="new-nickname"
+                rules={[{ required: true, message: '새로운 별명을 입력하세요' }]}
+              >
+                <Input name="new-nickname" value={nickname} onChange={onChangeNickname} required />
+              </Form.Item>
 
-                  <Form.Item {...tailLayout}>
-                    <ButtonWrapper htmlType="submit" >
-                      변경
-                    </ButtonWrapper>
-                  </Form.Item>
-              </Form>
-            </form>
-            <div>회원탈퇴</div>
+              <Form.Item {...tailLayout}>
+                <ButtonWrapper htmlType="submit" >
+                  변경
+                </ButtonWrapper>
+              </Form.Item>
+            </Form>
+            <h4 style={{ margin: '25px'}}>회원탈퇴</h4>
+            <Button style={{ marginLeft: '25px' }} onClick={onSignOut} >
+              탈퇴하기
+            </Button>
           </Wrapper>
         </Layout>
       </>
