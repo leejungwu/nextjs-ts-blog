@@ -4,8 +4,8 @@ import axios from 'axios';
 import postSaga from './post';
 import userSaga from './user';
 
-axios.defaults.baseURL = 'http://localhost:4000';
-//axios.defaults.baseURL = 'https://api.jdoub.me';
+//axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.baseURL = 'https://api.jdoub.me';
 
 axios.defaults.withCredentials = true;
 
