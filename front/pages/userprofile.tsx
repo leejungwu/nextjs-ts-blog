@@ -2,8 +2,7 @@ import React, { useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import Head from 'next/head';
 import Layout from '../components/Layout'
-import { Button, Input } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
+import { Form, Button, Input } from 'antd';
 
 import useInput from '../hooks/useInput';
 import { RootState } from '../interface/rootstate'
@@ -15,8 +14,12 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  margin: 30px;
+  margin-top: 30px;
 `;
+
+const ButtonWrapper = styled(Button)`
+  margin: 10px;
+`
 
 const UserProfile: React.FunctionComponent = () => {
     const dispatch = useDispatch();
@@ -42,6 +45,15 @@ const UserProfile: React.FunctionComponent = () => {
         data: nickname,
       })
     }, [nickname]);
+
+    const layout = {
+      labelCol: { span: 3 },
+      wrapperCol: { span: 10 },
+    };
+  
+    const tailLayout = {
+      wrapperCol: { offset: 5, span: 10 },
+    };
     
     return (
       <>
@@ -50,21 +62,36 @@ const UserProfile: React.FunctionComponent = () => {
         </Head>
         <Layout>
           <Wrapper>
-            <h1 style={{ textAlign: 'center' }}>설정</h1>
+            <h2 style={{ textAlign: 'center' }}>설정</h2>
               <form onSubmit={onSubmit}>
-                <Grid container>
-                    <Grid item xs={12}>
-                        <label htmlFor="user-email">현재이름</label>
-                        <Input name="user-email" value={me?.nickname!} readOnly/>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <label htmlFor="user-password">바꿀 이름</label>
-                        <Input name="user-password" value={nickname} onChange={onChangeNickname} required />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Button type="submit">변경</Button>
-                    </Grid>
-                </Grid>
+                <h4 style={{ margin: '25px'}}>개인정보 수정</h4>
+                <Form
+                {...layout}
+                name="basic"
+                initialValues={{ remember: true }}
+                onFinish={onSubmit}
+                >
+                  <Form.Item
+                    label="현재 이름"
+                    name="user-nickname"
+                  >
+                    <Input name="user-nickname" placeholder={me?.nickname!} readOnly required />
+                  </Form.Item>
+
+                  <Form.Item
+                    label="바꿀 이름"
+                    name="new-nickname"
+                    rules={[{ required: true, message: '새로운 별명을 입력하세요' }]}
+                  >
+                    <Input name="new-nickname" value={nickname} onChange={onChangeNickname} required />
+                  </Form.Item>
+
+                  <Form.Item {...tailLayout}>
+                    <ButtonWrapper htmlType="submit" >
+                      변경
+                    </ButtonWrapper>
+                  </Form.Item>
+              </Form>
             </form>
             <div>회원탈퇴</div>
           </Wrapper>
