@@ -29,8 +29,9 @@ module.exports = (sequelize:any, DataTypes:any) => {
 
     User.associate = (db:any) => {
         db.User.hasMany(db.Post);
-        db.User.hasMany(db.Comment);
+        db.User.hasMany(db.Comment, { onDelete: 'cascade', hooks: true });
         db.User.belongsToMany(db.Post, { through: 'Like', as: 'Liked' })
     };
+
     return User;
 }
