@@ -58,6 +58,7 @@ const AppLayout: FC = ({ children }) => {
     const javascriptPosts = mainPosts.filter((v:any) => v.category === 'javascript');
     const nodejsPosts = mainPosts.filter((v:any) => v.category === 'nodejs');
     const reactPosts = mainPosts.filter((v:any) => v.category === 'react');
+    const interviewPosts = mainPosts.filter((v:any) => v.category === 'interview');
 
     const onMenuHandle = () => {
         setMenuOpen((prev) => !prev);
@@ -159,6 +160,17 @@ const AppLayout: FC = ({ children }) => {
                                                 }}/>
                                         </Link>
                                         <Button>{algorithmPosts.length}</Button>
+                                    </ListItem>
+                                    <ListItem button>
+                                        <Link href="/category/interview">
+                                            <ListItemText primary="면접준비" style={{ maxWidth:'75px'}}
+                                                onClick={() => {
+                                                    dispatch({
+                                                        type: LOAD_POSTS_REQUEST,
+                                                    });
+                                                }}/>
+                                        </Link>
+                                        <Button>{interviewPosts.length}</Button>
                                     </ListItem>
                                 </List>
                             </div>    
@@ -268,6 +280,17 @@ const AppLayout: FC = ({ children }) => {
                                         }}/>
                                 </Link>
                                 <Button>{algorithmPosts.length}</Button>
+                            </ListItem>
+                            <ListItem button>
+                                <Link href="/category/interview">
+                                    <ListItemText primary="면접준비" style={{ maxWidth:'75px'}}
+                                        onClick={() => {
+                                            dispatch({
+                                                type: LOAD_POSTS_REQUEST,
+                                            });
+                                        }}/>
+                                </Link>
+                                <Button>{interviewPosts.length}</Button>
                             </ListItem>
                         </List>
                     </div>    

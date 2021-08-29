@@ -52,6 +52,7 @@ const Write = () => {
       <Menu.Item key="javascript">javascript</Menu.Item>
       <Menu.Item key="nodejs">nodejs</Menu.Item>
       <Menu.Item key="react">react</Menu.Item>
+      <Menu.Item key="interview">면접</Menu.Item>
     </Menu>
   )
   return (
