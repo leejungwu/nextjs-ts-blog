@@ -118,7 +118,7 @@ const Index: React.FunctionComponent = () => {
             />
           </div>
           <br />
-          <h3 style={{ textAlign: 'center' }}>방명록·질문</h3>
+          <h2 style={{ textAlign: 'center' }}>방명록·질문</h2>
           <br />
           <p>{singlePost.Comments.length > 0 ? singlePost.Comments.length : 0}개의 댓글</p>
           <hr />
