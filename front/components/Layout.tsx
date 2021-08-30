@@ -15,7 +15,6 @@ import styled from 'styled-components';
 import UserMenu from './UserMenu';
 import LoginMenu from './LoginMenu';
 
-import { LOAD_POSTS_REQUEST } from '../reducers/post';
 import { RootState } from '../interface/rootstate';
 
 const Button = styled.button`
@@ -46,7 +45,6 @@ function useWindowSize() {
 }
 
 const AppLayout: FC = ({ children }) => {
-    const dispatch = useDispatch();
     const [width] = useWindowSize();
     const [menuOpen, setMenuOpen] = useState(false);
     const breakPoint = 900;

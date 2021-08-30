@@ -39,12 +39,6 @@ const Index: React.FunctionComponent = () => {
   const { singlePost, mainPosts, pageSize, currentPage, start, end, loadPostsLoading, addCommentDone } = useSelector((state: RootState) => state.post);
 
   useEffect(() => {
-    dispatch({
-      type: LOAD_POSTS_REQUEST,
-    });
-  },[singlePost])
-
-  useEffect(() => {
     if (addCommentDone) {
       dispatch({
         type: LOAD_POST_REQUEST,
@@ -52,6 +46,12 @@ const Index: React.FunctionComponent = () => {
     });
     }
   },[])
+
+  if (mainPosts.length == 0 && loadPostsLoading == false) {
+    dispatch({
+      type: LOAD_POSTS_REQUEST,
+    });
+  }
 
   const Posts = mainPosts.filter((v: any) => v.id !== 1);
   const pagedData = paginate(Posts, currentPage, pageSize);
