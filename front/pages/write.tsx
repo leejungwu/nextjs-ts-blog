@@ -19,16 +19,16 @@ const Editor = dynamic(() => import("../components/Editor"), {
 
 const Write = () => {
   const dispatch = useDispatch();
-  const { addPostDone } = useSelector((state: RootState) => state.post);
+  const { addPostDone, mainPosts, loadPostsLoading } = useSelector((state: RootState) => state.post);
   const [title, onChangeTitle, setTitle] = useInput("");
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("");
 
-  useEffect(() => {
+  if (mainPosts.length == 0 && loadPostsLoading == false) {
     dispatch({
       type: LOAD_POSTS_REQUEST,
     });
-  }, [])
+  }
 
   useEffect(() => {
     if (addPostDone) {

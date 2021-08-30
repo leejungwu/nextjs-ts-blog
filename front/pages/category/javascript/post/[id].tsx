@@ -28,7 +28,7 @@ const Javascript = () => {
 
     const { id } = router.query;
     const { singlePost } = useSelector((state: RootState) => state.post);
-    const { likePostDone, unlikePostDone, updatePostDone } = useSelector((state: RootState) => state.post);
+    const { likePostDone, unlikePostDone, updatePostDone, mainPosts, loadPostsLoading } = useSelector((state: RootState) => state.post);
     const [editMode, setEditMode] = useState(false);
     const [title, onChangeTitle, setTitle] = useInput("");
     const [content, setContent] = useState("");
@@ -52,6 +52,11 @@ const Javascript = () => {
         })
     }, [id, title, content]);
 
+    if (mainPosts.length == 0 && loadPostsLoading == false) {
+        dispatch({
+          type: LOAD_POSTS_REQUEST,
+        });
+      }
 
     useEffect(() => {
         dispatch({

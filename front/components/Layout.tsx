@@ -100,20 +100,10 @@ const AppLayout: FC = ({ children }) => {
                                         {/* <Button>{mainPosts.length === 0? 0:mainPosts.length-1}</Button> */}
                                     </ListItem>
                                     <ListItem button>
-                                        <Link href="/profile"><ListItemText primary="Profile" 
-                                            onClick={() => {
-                                                dispatch({
-                                                    type: LOAD_POSTS_REQUEST,
-                                                });
-                                            }}/></Link>
+                                        <Link href="/profile"><ListItemText primary="Profile"/></Link>
                                     </ListItem>
                                     <ListItem button>
-                                        <Link href="/portfolio"><ListItemText primary="Portfolio" 
-                                            onClick={() => {
-                                                dispatch({
-                                                    type: LOAD_POSTS_REQUEST,
-                                                });
-                                            }}/></Link>
+                                        <Link href="/portfolio"><ListItemText primary="Portfolio"/></Link>
                                     </ListItem>
                                 </List>
                                 <Divider />
@@ -123,42 +113,22 @@ const AppLayout: FC = ({ children }) => {
                                         <Button>{javascriptPosts.length}</Button>
                                     </ListItem>
                                     <ListItem button>
-                                        <Link href="/category/nodejs"><ListItemText primary="NodeJs" style={{ maxWidth:'60px'}}
-                                            onClick={() => {
-                                                dispatch({
-                                                    type: LOAD_POSTS_REQUEST,
-                                                });
-                                            }}/></Link>
+                                        <Link href="/category/nodejs"><ListItemText primary="NodeJs" style={{ maxWidth:'60px'}}/></Link>
                                         <Button>{nodejsPosts.length}</Button>
                                     </ListItem>
                                     <ListItem button>
-                                        <Link href="/category/react"><ListItemText primary="React" style={{ maxWidth:'50px'}}
-                                            onClick={() => {
-                                                dispatch({
-                                                    type: LOAD_POSTS_REQUEST,
-                                                });
-                                            }}/></Link>
+                                        <Link href="/category/react"><ListItemText primary="React" style={{ maxWidth:'50px'}}/></Link>
                                         <Button>{reactPosts.length}</Button>
                                     </ListItem>
                                     <ListItem button>
                                         <Link href="/category/algorithm">
-                                            <ListItemText primary="Algorithm" style={{ maxWidth:'75px'}}
-                                                onClick={() => {
-                                                    dispatch({
-                                                        type: LOAD_POSTS_REQUEST,
-                                                    });
-                                                }}/>
+                                            <ListItemText primary="Algorithm" style={{ maxWidth:'75px'}}/>
                                         </Link>
                                         <Button>{algorithmPosts.length}</Button>
                                     </ListItem>
                                     <ListItem button>
                                         <Link href="/category/interview">
-                                            <ListItemText primary="면접준비" style={{ maxWidth:'75px'}}
-                                                onClick={() => {
-                                                    dispatch({
-                                                        type: LOAD_POSTS_REQUEST,
-                                                    });
-                                                }}/>
+                                            <ListItemText primary="면접준비" style={{ maxWidth:'75px'}}/>
                                         </Link>
                                         <Button>{interviewPosts.length}</Button>
                                     </ListItem>
@@ -206,79 +176,39 @@ const AppLayout: FC = ({ children }) => {
                                 </ListItem>
                             )}
                             <ListItem button>
-                                <Link href="/"><ListItemText primary="Home" style={{ maxWidth:'50px'}}
-                                    onClick={() => {
-                                        dispatch({
-                                            type: LOAD_POSTS_REQUEST,
-                                        });
-                                    }}/></Link>
+                                <Link href="/"><ListItemText primary="Home" style={{ maxWidth:'50px'}}/></Link>
                                 {/* <Button>{mainPosts.length === 0? 0:mainPosts.length-1}</Button> */}
                             </ListItem>
                             <ListItem button>
-                                <Link href="/profile"><ListItemText primary="Profile" 
-                                    onClick={() => {
-                                        dispatch({
-                                            type: LOAD_POSTS_REQUEST,
-                                        });
-                                    }}/></Link>
+                                <Link href="/profile"><ListItemText primary="Profile"/></Link>
                             </ListItem>
                             <ListItem button>
-                                <Link href="/portfolio"><ListItemText primary="Portfolio" 
-                                    onClick={() => {
-                                        dispatch({
-                                            type: LOAD_POSTS_REQUEST,
-                                        });
-                                    }}/></Link>
+                                <Link href="/portfolio"><ListItemText primary="Portfolio"/></Link>
                             </ListItem>
                         </List>
                         <Divider />
                         <List component="nav" aria-label="secondary mailbox folders">
                             <ListItem button>
-                                <Link href="/category/javascript"><ListItemText primary="Javascript" style={{ maxWidth:'80px'}}
-                                    onClick={() => {
-                                        dispatch({
-                                            type: LOAD_POSTS_REQUEST,
-                                        });
-                                    }}/></Link>
+                                <Link href="/category/javascript"><ListItemText primary="Javascript" style={{ maxWidth:'80px'}}/></Link>
                                 <Button>{javascriptPosts.length}</Button>
                             </ListItem>
                             <ListItem button>
-                                <Link href="/category/nodejs"><ListItemText primary="NodeJs" style={{ maxWidth:'60px'}}
-                                    onClick={() => {
-                                        dispatch({
-                                            type: LOAD_POSTS_REQUEST,
-                                        });
-                                    }}/></Link>
+                                <Link href="/category/nodejs"><ListItemText primary="NodeJs" style={{ maxWidth:'60px'}}/></Link>
                                 <Button>{nodejsPosts.length}</Button>
                             </ListItem>
                             <ListItem button>
-                                <Link href="/category/react"><ListItemText primary="React" style={{ maxWidth:'50px'}} 
-                                    onClick={() => {
-                                        dispatch({
-                                            type: LOAD_POSTS_REQUEST,
-                                        });
-                                    }}/></Link>
+                                <Link href="/category/react"><ListItemText primary="React" style={{ maxWidth:'50px'}}/></Link>
                                 <Button>{reactPosts.length}</Button>
                             </ListItem>
                             <ListItem button>
                                 <Link href="/category/algorithm">
-                                    <ListItemText primary="Algorithm" style={{ maxWidth:'75px'}}
-                                        onClick={() => {
-                                            dispatch({
-                                                type: LOAD_POSTS_REQUEST,
-                                            });
-                                        }}/>
+                                    <ListItemText primary="Algorithm" style={{ maxWidth:'75px'}}/>
                                 </Link>
                                 <Button>{algorithmPosts.length}</Button>
                             </ListItem>
                             <ListItem button>
                                 <Link href="/category/interview">
-                                    <ListItemText primary="면접준비" style={{ maxWidth:'75px'}}
-                                        onClick={() => {
-                                            dispatch({
-                                                type: LOAD_POSTS_REQUEST,
-                                            });
-                                        }}/>
+                                    <ListItemText primary="면접준비" style={{ maxWidth:'75px'}}/>
                                 </Link>
                                 <Button>{interviewPosts.length}</Button>
                             </ListItem>

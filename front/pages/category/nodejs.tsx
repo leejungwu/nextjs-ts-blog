@@ -37,11 +37,11 @@ const Nodejs: React.FunctionComponent = () => {
   const router = useRouter()
   const { mainPosts, pageSize, currentPage, start, end, loadPostsLoading } = useSelector((state:RootState) => state.post);
 
-  useEffect(() => {
+  if (mainPosts.length == 0 && loadPostsLoading == false) {
     dispatch({
       type: LOAD_POSTS_REQUEST,
     });
-  }, [])
+  }
 
   const nodejsPosts = mainPosts.filter((v:any) => v.category === 'nodejs');
   const pagedData = paginate(nodejsPosts, currentPage, pageSize);

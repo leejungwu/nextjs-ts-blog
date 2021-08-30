@@ -26,6 +26,7 @@ const ButtonWrapper = styled(Button)`
 const Login = () => {
   const dispatch = useDispatch();
 
+  const { mainPosts, loadPostsLoading } = useSelector((state:RootState)=> state.post);
   const { me, logInError, logInLoading } = useSelector((state:RootState)=> state.user);
   const [email, onChangeEmail] = useInput('');
   const [password, onChangePassword] = useInput('');
@@ -36,11 +37,11 @@ const Login = () => {
     }
   }, [me && me.id])
 
-  useEffect(() => {
+  if (mainPosts.length == 0 && loadPostsLoading == false) {
     dispatch({
       type: LOAD_POSTS_REQUEST,
     });
-  }, [])
+  }
   
   useEffect(() => {
     if (logInError) {

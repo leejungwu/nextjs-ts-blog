@@ -37,11 +37,11 @@ const Interview: React.FunctionComponent = () => {
   const router = useRouter()
   const { mainPosts, pageSize, currentPage, start, end, loadPostsLoading } = useSelector((state:RootState) => state.post);
 
-  useEffect(() => {
+  if (mainPosts.length == 0 && loadPostsLoading == false) {
     dispatch({
       type: LOAD_POSTS_REQUEST,
     });
-  }, [])
+  }
 
   const interviewPosts = mainPosts.filter((v:any) => v.category === 'interview');
   const pagedData = paginate(interviewPosts, currentPage, pageSize);

@@ -28,7 +28,7 @@ const Interview = () => {  // ssr로 mainPosts 유지되게. [id]로 들어오�
 
     const { id } = router.query;
     const { singlePost } = useSelector((state: RootState) => state.post);
-    const { likePostDone, unlikePostDone, updatePostDone } = useSelector((state: RootState) => state.post);
+    const { likePostDone, unlikePostDone, updatePostDone, mainPosts, loadPostsLoading } = useSelector((state: RootState) => state.post);
     const [editMode, setEditMode] = useState(false);
     const [title, onChangeTitle, setTitle] = useInput("");
     const [content, setContent] = useState("");
@@ -52,11 +52,11 @@ const Interview = () => {  // ssr로 mainPosts 유지되게. [id]로 들어오�
         })
     }, [id, title, content]);
 
-    useEffect(() => {
+    if (mainPosts.length == 0 && loadPostsLoading == false) {
         dispatch({
           type: LOAD_POSTS_REQUEST,
         });
-    }, [])
+    }
 
     useEffect(() => {
         dispatch({

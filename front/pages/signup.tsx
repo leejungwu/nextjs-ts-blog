@@ -18,12 +18,12 @@ import { Form, Input, Checkbox, Button } from 'antd';
 const SignUp = () => {
   const dispatch = useDispatch();
   const { signUpDone, signUpError, me } = useSelector((state:RootState) => state.user);
-
-  useEffect(() => {
+  const { mainPosts, loadPostsLoading } = useSelector((state:RootState)=> state.post);
+  if (mainPosts.length == 0 && loadPostsLoading == false) {
     dispatch({
       type: LOAD_POSTS_REQUEST,
     });
-  }, [])
+  }
   
   useEffect(() => {
     if (me && me.id) {

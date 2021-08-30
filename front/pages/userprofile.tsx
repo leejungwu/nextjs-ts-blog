@@ -24,11 +24,12 @@ const ButtonWrapper = styled(Button)`
 const UserProfile: React.FunctionComponent = () => {
     const dispatch = useDispatch();
 
-    useEffect(() => {
+    const { mainPosts, loadPostsLoading } = useSelector((state:RootState)=> state.post);
+    if (mainPosts.length == 0 && loadPostsLoading == false) {
       dispatch({
         type: LOAD_POSTS_REQUEST,
       });
-    }, [])
+    }
 
     useEffect(() => {
       dispatch({

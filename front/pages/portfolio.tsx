@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import wrapper from '../store/configureStore';
@@ -9,17 +9,20 @@ import styled from 'styled-components';
 import { LOAD_MY_INFO_REQUEST } from '../reducers/user';
 import { LOAD_POSTS_REQUEST } from '../reducers/post';
 
+import { RootState } from '../interface/rootstate';
+
 const Wrapper = styled.div`
   margin: 30px;
 `;
 
 const Portfolio: React.FunctionComponent = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
+  const { mainPosts, loadPostsLoading } = useSelector((state:RootState)=> state.post);
+  if (mainPosts.length == 0 && loadPostsLoading == false) {
     dispatch({
       type: LOAD_POSTS_REQUEST,
     });
-  }, [])
+  }
 
   return (
     <>
