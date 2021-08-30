@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import Head from 'next/head';
 import styled from 'styled-components';
 import dayjs from 'dayjs';
