@@ -52,11 +52,6 @@ const Javascript = () => {
         })
     }, [id, title, content]);
 
-    useEffect(() => {
-        dispatch({
-          type: LOAD_POSTS_REQUEST,
-        });
-    }, [])
 
     useEffect(() => {
         dispatch({

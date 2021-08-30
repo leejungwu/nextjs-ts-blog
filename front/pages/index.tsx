@@ -42,7 +42,7 @@ const Index: React.FunctionComponent = () => {
     dispatch({
       type: LOAD_POSTS_REQUEST,
     });
-  },[])
+  },[singlePost])
 
   useEffect(() => {
     if (addCommentDone) {

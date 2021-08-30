@@ -95,12 +95,7 @@ const AppLayout: FC = ({ children }) => {
                                     )}
                                     <ListItem button>
                                         <Link href="/">
-                                        <ListItemText primary="Home" style={{ maxWidth:'50px'}} 
-                                            onClick={() => {
-                                                dispatch({
-                                                    type: LOAD_POSTS_REQUEST,
-                                                });
-                                            }}/>
+                                        <ListItemText primary="Home" style={{ maxWidth:'50px'}} />
                                         </Link>
                                         {/* <Button>{mainPosts.length === 0? 0:mainPosts.length-1}</Button> */}
                                     </ListItem>
@@ -124,12 +119,7 @@ const AppLayout: FC = ({ children }) => {
                                 <Divider />
                                 <List component="nav" aria-label="secondary mailbox folders">
                                     <ListItem button>
-                                        <Link href="/category/javascript"><ListItemText primary="Javascript" style={{ maxWidth:'80px'}} 
-                                            onClick={() => {
-                                                dispatch({
-                                                    type: LOAD_POSTS_REQUEST,
-                                                });
-                                            }}/></Link>
+                                        <Link href="/category/javascript"><ListItemText primary="Javascript" style={{ maxWidth:'80px'}}/></Link>
                                         <Button>{javascriptPosts.length}</Button>
                                     </ListItem>
                                     <ListItem button>

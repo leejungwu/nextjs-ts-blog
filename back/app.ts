@@ -60,7 +60,7 @@ app.use(session({
     proxy: true,
     cookie: {
         httpOnly: true,
-        secure: true,  // 배포할때는 true, http에서는 false
+        secure: false,  // 배포할때는 true, http에서는 false
         domain: process.env.NODE_ENV === 'production' ? '.jdoub.me' : undefined
     },
 }));
