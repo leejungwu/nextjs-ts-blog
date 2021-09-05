@@ -16,6 +16,10 @@ import { END } from 'redux-saga';
 import axios from 'axios';
 import dynamic from "next/dynamic";
 import useInput from '../../../hooks/useInput';
+import { EditorState, convertToRaw, ContentState } from "draft-js";
+import draftToHtml from "draftjs-to-html";
+import htmlToDraft from 'html-to-draftjs';
+
 
 const Writer = dynamic(() => import("../../../components/Writer"), {
     ssr: false,
@@ -30,10 +34,18 @@ const Home = () => {  // ssr로 mainPosts 유지되게 해야됨. [id]로 들어
     const { singlePost, likePostDone, unlikePostDone, updatePostDone } = useSelector((state: RootState) => state.post);
     const [editMode, setEditMode] = useState(false);
     const [title, onChangeTitle, setTitle] = useInput("");
-    const [content, setContent] = useState("");
+    const [content, setContent] = useState<EditorState>(EditorState.createEmpty());
 
     const onChangePost = useCallback(() => {
         setEditMode(true);
+        const blocksFromHtml = htmlToDraft(singlePost.content);
+        if (blocksFromHtml) {
+            const { contentBlocks, entityMap } = blocksFromHtml;
+            const contentState = ContentState.createFromBlockArray(contentBlocks, entityMap);
+            const editorState = EditorState.createWithContent(contentState);
+            setContent(editorState);
+        }
+        // eslint-disable-next-line
     }, []);
 
     const onCancelUpdate = useCallback(() => {
@@ -46,7 +58,7 @@ const Home = () => {  // ssr로 mainPosts 유지되게 해야됨. [id]로 들어
             data: {
                 PostId: id,
                 title: title,
-                content: content
+                content: draftToHtml(convertToRaw(content.getCurrentContent()))
             }
         })
     }, [id, title, content]);
@@ -66,7 +78,7 @@ const Home = () => {  // ssr로 mainPosts 유지되게 해야됨. [id]로 들어
     useEffect(() => {
         if (updatePostDone) {
             setTitle('');
-            setContent('');
+            setContent(EditorState.createEmpty());
             onCancelUpdate();
         }
     }, [updatePostDone])
@@ -79,6 +91,11 @@ const Home = () => {  // ssr로 mainPosts 유지되게 해야됨. [id]로 들어
             });
         }
     }, [likePostDone, unlikePostDone])
+
+    const handleEditorStateChange = (editorState:any) => {
+        console.log(draftToHtml(convertToRaw(editorState.getCurrentContent())));
+        setContent(editorState);
+    }
 
     const onLike = useCallback(() => {
         dispatch({
@@ -126,7 +143,7 @@ const Home = () => {  // ssr로 mainPosts 유지되게 해야됨. [id]로 들어
                         {editMode
                             ? (
                                 <form onSubmit={onUpload} style={{ margin: '10px', padding: '10px', border: 'ridge' }}>
-                                    <Writer onChangeTitle={onChangeTitle} setContent={setContent} title={singlePost.title} content={singlePost.content} />
+                                    <Writer onChangeTitle={onChangeTitle} title={singlePost.title} content={content} handleEditorStateChange={handleEditorStateChange} />
                                     <Button type="submit">업로드</Button>
                                     <Button onClick={onCancelUpdate}>취소</Button>
                                 </form>

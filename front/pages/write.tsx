@@ -50,6 +50,7 @@ const Write = () => {
   }
 
   const handleEditorStateChange = (editorState:any) => {
+    console.log(draftToHtml(convertToRaw(editorState.getCurrentContent())));
     setContent(editorState);
   }
 
@@ -70,7 +71,7 @@ const Write = () => {
             Click menu item <DownOutlined />
           </a>
         </Dropdown>
-        <Writer onChangeTitle={onChangeTitle} handleEditorStateChange={handleEditorStateChange} />
+        <Writer onChangeTitle={onChangeTitle} content={content} handleEditorStateChange={handleEditorStateChange} />
         <Button type="submit">upload</Button>
       </form>
     </Layout>

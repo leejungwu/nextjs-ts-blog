@@ -37,7 +37,7 @@ const Index: React.FunctionComponent = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const { singlePost, mainPosts, pageSize, currentPage, start, end, loadPostsLoading, addCommentDone } = useSelector((state: RootState) => state.post);
-
+  
   useEffect(() => {
     if (addCommentDone) {
       dispatch({

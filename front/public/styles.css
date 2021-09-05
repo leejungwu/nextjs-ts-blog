@@ -1,8 +1,9 @@
 pre {
-  background: #c7c7c7;
+  background: #d8d8d8;
   border-radius: 3px;
   padding: 10px 10px;
 }
+
 blockquote {
   border-left: 5px solid #f1f1f1;
   padding-left: 5px;
@@ -356,36 +357,6 @@ input[type='checkbox'] {
   transform: scale(1.5);
   margin-right: 0.6em;
   vertical-align: middle;
-}
-
-.code,
-code {
-  background: rgba(135, 131, 120, 0.15);
-  border-radius: 3px;
-  padding: 0.2em 0.4em;
-  border-radius: 3px;
-  font-size: 85%;
-  tab-size: 2;
-}
-
-code {
-  color: #eb5757;
-}
-
-.code {
-  padding: 1.5em 1em;
-}
-
-.code-wrap {
-  white-space: pre-wrap;
-  word-break: break-all;
-}
-
-.code > code {
-  background: none;
-  padding: 0;
-  font-size: 100%;
-  color: inherit;
 }
 
 blockquote {

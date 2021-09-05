@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import wrapper from '../store/configureStore';
 import '../public/styles.css';
 
+
 const Blog: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>

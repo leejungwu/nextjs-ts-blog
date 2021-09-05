@@ -13,6 +13,7 @@ const Writer = (props: any) => {
                 wrapperClassName="demo-wrapper"
                 // css editor class name
                 editorClassName="demo-editor"
+                editorState={props.content}
                 // language 설정
                 localization={{
                     locale: "ko",
@@ -24,6 +25,7 @@ const Writer = (props: any) => {
                     textAlign: { inDropdown: true },
                     link: { inDropdown: true },
                     history: { inDropdown: true },
+                    code: { inDropdown: true },
                 }}
                 // 에디터 값이 변경될 때 호출될 함수 정의
                 onEditorStateChange={props.handleEditorStateChange}
