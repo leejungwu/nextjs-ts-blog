@@ -147,7 +147,7 @@ const Algorithm = () => {  // ssr로 mainPosts 유지되게. [id]로 들어오�
                                     <Button onClick={onCancelUpdate}>취소</Button>
                                 </form>
                             )
-                            : <div className="ck-content" style={{ textAlign: 'left' }}>{ReactHtmlParser(singlePost.content)}</div>
+                            : <div style={{ textAlign: 'left' }}>{ReactHtmlParser(singlePost.content)}</div>
                         }
 
                     </div>
