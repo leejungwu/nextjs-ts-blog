@@ -17,7 +17,7 @@ import axios from 'axios';
 import dynamic from "next/dynamic";
 import useInput from '../../../../hooks/useInput';
 
-const Editor = dynamic(() => import("../../../../components/Editor"), {
+const Writer = dynamic(() => import("../../../../components/Writer"), {
     ssr: false,
 });
 
@@ -127,7 +127,7 @@ const React = () => {
                         {editMode
                             ? (
                                 <form onSubmit={onUpload} style={{ margin: '10px', padding: '10px', border: 'ridge' }}>
-                                    <Editor onChangeTitle={onChangeTitle} setContent={setContent} title={singlePost.title} content={singlePost.content} />
+                                    <Writer onChangeTitle={onChangeTitle} setContent={setContent} title={singlePost.title} content={singlePost.content} />
                                     <Button type="submit">업로드</Button>
                                     <Button onClick={onCancelUpdate}>취소</Button>
                                 </form>

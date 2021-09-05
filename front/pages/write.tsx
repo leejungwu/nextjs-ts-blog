@@ -13,7 +13,10 @@ import { DownOutlined } from '@ant-design/icons';
 import { addPost } from '../reducers/post';
 import { LOAD_MY_INFO_REQUEST } from '../reducers/user';
 import { LOAD_POSTS_REQUEST } from '../reducers/post';
-const Editor = dynamic(() => import("../components/Editor"), {
+import { EditorState, convertToRaw } from "draft-js";
+import draftToHtml from "draftjs-to-html";
+
+const Writer = dynamic(() => import("../components/Writer"), {
   ssr: false,
 });
 
@@ -21,7 +24,7 @@ const Write = () => {
   const dispatch = useDispatch();
   const { addPostDone, mainPosts, loadPostsLoading } = useSelector((state: RootState) => state.post);
   const [title, onChangeTitle, setTitle] = useInput("");
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState<EditorState>(EditorState.createEmpty());
   const [category, setCategory] = useState("");
 
   if (mainPosts.length == 0 && loadPostsLoading == false) {
@@ -33,17 +36,21 @@ const Write = () => {
   useEffect(() => {
     if (addPostDone) {
       setTitle('');
-      setContent('');
+      setContent(EditorState.createEmpty());
     }
   }, [addPostDone])
 
   const onSubmit = useCallback(() => {
-    console.log(title, content);
-    dispatch(addPost({ category: category, title: title, content: content }));
+    console.log(title, draftToHtml(convertToRaw(content.getCurrentContent())));
+    dispatch(addPost({ category: category, title: title, content: draftToHtml(convertToRaw(content.getCurrentContent())) }));
   }, [category, title, content]);
 
   const onCategory = ({ key }: any) => {
     setCategory(key)
+  }
+
+  const handleEditorStateChange = (editorState:any) => {
+    setContent(editorState);
   }
 
   const menu = (
@@ -63,7 +70,7 @@ const Write = () => {
             Click menu item <DownOutlined />
           </a>
         </Dropdown>
-        <Editor onChangeTitle={onChangeTitle} setContent={setContent} />
+        <Writer onChangeTitle={onChangeTitle} handleEditorStateChange={handleEditorStateChange} />
         <Button type="submit">upload</Button>
       </form>
     </Layout>
