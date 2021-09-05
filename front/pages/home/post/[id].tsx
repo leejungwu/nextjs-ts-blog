@@ -93,7 +93,6 @@ const Home = () => {  // ssr로 mainPosts 유지되게 해야됨. [id]로 들어
     }, [likePostDone, unlikePostDone])
 
     const handleEditorStateChange = (editorState:any) => {
-        console.log(draftToHtml(convertToRaw(editorState.getCurrentContent())));
         setContent(editorState);
     }
 
