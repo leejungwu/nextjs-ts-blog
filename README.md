@@ -12,7 +12,7 @@
 - React
 - Redux saga
 - ant design, material-ui, bootstrap
-- CKEDITOR5-react
+- react-draft-wysiwyg
 
 ## back
 - Node.js
