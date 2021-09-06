@@ -126,7 +126,7 @@ const AppLayout: FC = ({ children }) => {
                                     </ListItem>
                                     <ListItem button>
                                         <Link href="/category/interview">
-                                            <ListItemText primary="면접준비" style={{ maxWidth:'75px'}}/>
+                                            <ListItemText primary="면접준비" style={{ maxWidth:'72px'}}/>
                                         </Link>
                                         <Button>{interviewPosts.length}</Button>
                                     </ListItem>
@@ -134,7 +134,7 @@ const AppLayout: FC = ({ children }) => {
                             </div>    
                         </Sider>
                         <Layout>
-                            <Content style={{ minHeight: '600px'}}>
+                            <Content style={{ minHeight: '600px', backgroundColor: '#f8f9fa'}}>
                                 {children}
                             </Content> 
                         </Layout>                         
@@ -206,14 +206,14 @@ const AppLayout: FC = ({ children }) => {
                             </ListItem>
                             <ListItem button>
                                 <Link href="/category/interview">
-                                    <ListItemText primary="면접준비" style={{ maxWidth:'75px'}}/>
+                                    <ListItemText primary="면접준비" style={{ maxWidth:'72px'}}/>
                                 </Link>
                                 <Button>{interviewPosts.length}</Button>
                             </ListItem>
                         </List>
                     </div>    
                     <Layout>
-                        <Content style={{ minHeight:'600px'}}>
+                        <Content style={{ minHeight:'600px', backgroundColor: '#f8f9fa'}}>
                             {children}
                         </Content> 
                     </Layout>                         

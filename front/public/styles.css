@@ -276,17 +276,6 @@ ol > li {
   margin-left: -1.1em;
 }
 
-.selected-value {
-  display: inline-block;
-  padding: 0 0.5em;
-  background: rgba(206, 205, 202, 0.5);
-  border-radius: 3px;
-  margin-right: 0.5em;
-  margin-top: 0.3em;
-  margin-bottom: 0.3em;
-  white-space: nowrap;
-}
-
 .collection-title {
   display: inline-block;
   margin-right: 1em;
