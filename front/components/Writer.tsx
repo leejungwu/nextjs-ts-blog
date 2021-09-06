@@ -29,6 +29,9 @@ const Writer = (props: any) => {
                 }}
                 // 에디터 값이 변경될 때 호출될 함수 정의
                 onEditorStateChange={props.handleEditorStateChange}
+                editorStyle={{ border: "1px solid", minHeight: '500px'}}
+                handlePastedText={() => false}
+                stripPastedStyles={true}
             />
             {/* <div dangerouslySetInnerHTML={{__html: data}} /> */}
         </div>
