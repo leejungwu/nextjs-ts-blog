@@ -66,7 +66,7 @@ const AppLayout: FC = ({ children }) => {
         return (  
             <div style={{ maxWidth:'1100px', margin:'auto' }}>
                 <Layout>
-                    <AppBar position="static" style={{ backgroundColor: 'white', zIndex:1 }} elevation={1}>
+                    <AppBar position="static" style={{ backgroundColor: 'white', zIndex:1001 }} elevation={1}>
                         <Toolbar>
                             <Grid item xs={4}>
                                 <Link href="/"><a><img src="/favicon.ico"></img></a></Link>
@@ -150,7 +150,7 @@ const AppLayout: FC = ({ children }) => {
                 <div className='back-dark'></div>
             ):null}
             <Layout>
-                <AppBar position="static" style={{ backgroundColor: 'white', height: '55px', zIndex:1}} elevation={1}>
+                <AppBar position="static" style={{ backgroundColor: 'white', height: '55px', zIndex:1001}} elevation={1}>
                     <Toolbar>
                         <Grid item xs={4}>
                             <a><img src="/hamburger.ico" onClick={onMenuHandle}></img></a>
