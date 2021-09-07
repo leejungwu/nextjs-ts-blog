@@ -41,7 +41,7 @@ const Portfolio: React.FunctionComponent = () => {
         <Wrapper>
           <h1 style={{ textAlign: 'center' }}>Portfolio</h1>
           <div className="filtered-list">
-            <input type="radio" name="category" id="category-all" checked/>
+            <input type="radio" name="category" id="category-all" defaultChecked={true}/>
             <input type="radio" name="category" id="category-personal" />
             <input type="radio" name="category" id="category-competition" />
             <input type="radio" name="category" id="category-schoolwork" />
