@@ -15,6 +15,7 @@ const Blog: FC<AppProps> = ({ Component, pageProps }) => {
       <Head>
         <title>JW Blog</title>
         <link rel="shortcut icon" href="/favicon.ico" />
+        <script src="https://kit.fontawesome.com/a72e3c1afa.js" crossOrigin="anonymous"></script>
       </Head>
       <Component {...pageProps} />
     </>

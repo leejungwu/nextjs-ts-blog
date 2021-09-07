@@ -66,7 +66,7 @@ const AppLayout: FC = ({ children }) => {
         return (  
             <div style={{ maxWidth:'1100px', margin:'auto' }}>
                 <Layout>
-                    <AppBar position="static" style={{ backgroundColor: 'white'}} elevation={1}>
+                    <AppBar position="static" style={{ backgroundColor: 'white', zIndex:1 }} elevation={1}>
                         <Toolbar>
                             <Grid item xs={4}>
                                 <Link href="/"><a><img src="/favicon.ico"></img></a></Link>
@@ -83,7 +83,7 @@ const AppLayout: FC = ({ children }) => {
                         </Toolbar>
                     </AppBar>
                     <Layout>
-                        <Sider width={200} style={{ backgroundColor: 'white'}}>
+                        <Sider width={200} style={{ backgroundColor: 'white' }}>
                             <div>
                                 <List component="nav" aria-label="main mailbox folders">
                                     {me && me.id === 1 && (
@@ -133,8 +133,9 @@ const AppLayout: FC = ({ children }) => {
                                 </List>
                             </div>    
                         </Sider>
+                        <Divider orientation="vertical" flexItem />
                         <Layout>
-                            <Content style={{ minHeight: '600px', backgroundColor: '#f8f9fa'}}>
+                            <Content style={{ minHeight: '600px', backgroundColor: 'white'}}>
                                 {children}
                             </Content> 
                         </Layout>                         
@@ -149,7 +150,7 @@ const AppLayout: FC = ({ children }) => {
                 <div className='back-dark'></div>
             ):null}
             <Layout>
-                <AppBar position="static" style={{ backgroundColor: 'white', height: '55px'}} elevation={1}>
+                <AppBar position="static" style={{ backgroundColor: 'white', height: '55px', zIndex:1}} elevation={1}>
                     <Toolbar>
                         <Grid item xs={4}>
                             <a><img src="/hamburger.ico" onClick={onMenuHandle}></img></a>
@@ -213,7 +214,7 @@ const AppLayout: FC = ({ children }) => {
                         </List>
                     </div>    
                     <Layout>
-                        <Content style={{ minHeight:'600px', backgroundColor: '#f8f9fa'}}>
+                        <Content style={{ minHeight:'600px', backgroundColor: 'white'}}>
                             {children}
                         </Content> 
                     </Layout>                         
