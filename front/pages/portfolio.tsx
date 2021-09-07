@@ -65,6 +65,7 @@ const Portfolio: React.FunctionComponent = () => {
                   <div className="mb-2">
                     <div className="extra-links">
                       <a href="https://jdoub.me/" target="_blank"><i className="fas fa-link"> Link</i></a>
+                      <a href="https://github.com/leejungwu/nextjs-ts-blog" target="_blank"><i className="fab fa-github"></i> Code</a>
                     </div>
                   </div>
                   <div className="teaser">
@@ -86,6 +87,7 @@ const Portfolio: React.FunctionComponent = () => {
                   <div className="mb-2">
                     <div className="extra-links">
                       <a href="https://www.jungwooblog.com/" target="_blank"><i className="fas fa-link"> Link</i></a>
+                      <a href="https://github.com/leejungwu/nodeblog" target="_blank"><i className="fab fa-github"></i> Code</a>
                     </div>
                   </div>
                   <div className="teaser">
@@ -107,6 +109,7 @@ const Portfolio: React.FunctionComponent = () => {
                   <div className="mb-2">
                     <div className="extra-links">
                       <a href="http://agile-plains-39979.herokuapp.com" target="_blank"><i className="fas fa-link"> Link</i></a>
+                      <a href="https://github.com/leejungwu/Address-book" target="_blank"><i className="fab fa-github"></i> Code</a>
                     </div>
                   </div>
                   <div className="teaser">
@@ -128,6 +131,7 @@ const Portfolio: React.FunctionComponent = () => {
                   <div className="mb-2">
                     <div className="extra-links">
                       <a href="http://13.124.26.140/" target="_blank"><i className="fas fa-link"> Link</i></a>
+                      <a href="https://github.com/leejungwu/DCU" target="_blank"><i className="fab fa-github"></i> Code</a>
                     </div>
                   </div>
                   <div className="teaser">
@@ -152,6 +156,7 @@ const Portfolio: React.FunctionComponent = () => {
                   <div className="mb-2">
                     <div className="extra-links">
                       <a href="https://jdoub.me/" target="_blank"><i className="fas fa-link"> Link</i></a>
+                      <a href="https://github.com/leejungwu/nextjs-ts-blog" target="_blank"><i className="fab fa-github"></i> Code</a>
                     </div>
                   </div>
                   <div className="teaser">
@@ -169,6 +174,7 @@ const Portfolio: React.FunctionComponent = () => {
                   <div className="mb-2">
                     <div className="extra-links">
                       <a href="https://www.jungwooblog.com/" target="_blank"><i className="fas fa-link"> Link</i></a>
+                      <a href="https://github.com/leejungwu/nodeblog" target="_blank"><i className="fab fa-github"></i> Code</a>
                     </div>
                   </div>
                   <div className="teaser">
@@ -186,6 +192,7 @@ const Portfolio: React.FunctionComponent = () => {
                 <div className="mb-2">
                   <div className="extra-links">
                     <a href="http://agile-plains-39979.herokuapp.com" target="_blank"><i className="fas fa-link"> Link</i></a>
+                    <a href="https://github.com/leejungwu/Address-book" target="_blank"><i className="fab fa-github"></i> Code</a>
                   </div>
                 </div>
                 <div className="teaser">
@@ -203,6 +210,7 @@ const Portfolio: React.FunctionComponent = () => {
                 <div className="mb-2">
                   <div className="extra-links">
                     <a href="http://13.124.26.140/" target="_blank"><i className="fas fa-link"> Link</i></a>
+                    <a href="https://github.com/leejungwu/Address-book" target="_blank"><i className="fab fa-github"></i> Code</a>
                   </div>
                 </div>
                 <div className="teaser">
