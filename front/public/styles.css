@@ -743,6 +743,7 @@ dummy {
   transition: transform 0.5s;
   will-change: transform;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 .project {
