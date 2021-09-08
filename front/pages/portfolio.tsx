@@ -93,7 +93,7 @@ const Portfolio: React.FunctionComponent = () => {
                   <div className="teaser">
                     <img src="/jungwooblog.png" alt="Loading..." data-action="zoom"/>
                   </div>
-                  <p className="description">blog-based bulletin board project</p>
+                  <p className="description">Blog-based bulletin board project</p>
                   <p className="keywords">web development</p>
                   <div>
                     <small className="badge">personal</small>
@@ -180,7 +180,7 @@ const Portfolio: React.FunctionComponent = () => {
                   <div className="teaser">
                     <img src="/jungwooblog.png" alt="Loading..." data-action="zoom"/>
                   </div>
-                  <p className="description">asddsf</p>
+                  <p className="description">Blog-based bulletin board project</p>
               </Modal.Body>
             </Modal>
 
