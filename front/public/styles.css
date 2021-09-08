@@ -1,5 +1,5 @@
 img:not(a > img, .rdw-option-wrapper > img) {
-  max-width: 100% !important;
+  max-width: 100%;
   min-width: 50px;
   text-align: center;
   margin: 1em auto;
