@@ -31,7 +31,7 @@ const Writer = (props: any) => {
                 onEditorStateChange={props.handleEditorStateChange}
                 editorStyle={{ border: "1px solid", minHeight: '500px'}}
                 handlePastedText={() => false}
-                // stripPastedStyles={true}
+                stripPastedStyles={true}
             />
             {/* <div dangerouslySetInnerHTML={{__html: data}} /> */}
         </div>

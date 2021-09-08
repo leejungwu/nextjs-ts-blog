@@ -38,7 +38,7 @@ const Home = () => {  // ssr로 mainPosts 유지되게 해야됨. [id]로 들어
 
     const onChangePost = useCallback(() => {
         setEditMode(true);
-        const blocksFromHtml = htmlToDraft(singlePost.content);
+        const blocksFromHtml = htmlToDraft("<p>"+singlePost.content+"</p>");
         if (blocksFromHtml) {
             const { contentBlocks, entityMap } = blocksFromHtml;
             const contentState = ContentState.createFromBlockArray(contentBlocks, entityMap);

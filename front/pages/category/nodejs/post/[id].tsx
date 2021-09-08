@@ -38,7 +38,7 @@ const Nodejs = () => {  // ssr로 mainPosts 유지되게. [id]로 들어오기�
 
     const onChangePost = useCallback(() => {
         setEditMode(true);
-        const blocksFromHtml = htmlToDraft(singlePost.content);
+        const blocksFromHtml = htmlToDraft("<p>"+singlePost.content+"</p>");
         if (blocksFromHtml) {
             const { contentBlocks, entityMap } = blocksFromHtml;
             const contentState = ContentState.createFromBlockArray(contentBlocks, entityMap);
