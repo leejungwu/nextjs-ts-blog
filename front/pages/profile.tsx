@@ -324,12 +324,21 @@ const Profile: React.FunctionComponent = () => {
         </div>
         <div id="d91c2e31-1696-4d8b-be71-ccdef258c0bb" className="column-list">
           <div id="201e9705-5063-4f4a-938b-ff6ff195a8e9" style={{width: "43.75%"}} className="column">
-            <h3 id="003d4442-0027-4ba3-99f1-8532ed832dd5" className="">TOEIC</h3>
-            <p id="67c69a99-9838-4cd6-af52-a77414ba9d86" className=""> 825점</p>
+            <h3 id="003d4442-0027-4ba3-99f1-8532ed832dd5" className="">TOEIC 825점</h3>
           </div>
           <div id="ac9e7b71-e9a7-4276-b167-51e44781fc1c" style={{width: '56.25%'}} className="column">
             <ul id="36b762f2-f232-4e52-bd73-17cfbe3a72bc" className="bulleted-list">
               <li>2019.09.08 취득</li>
+            </ul>
+          </div>
+        </div>
+        <div id="d91c2e31-1696-4d8b-be71-ccdef258c0bb" className="column-list">
+          <div id="201e9705-5063-4f4a-938b-ff6ff195a8e9" style={{width: "43.75%"}} className="column">
+            <h3 id="003d4442-0027-4ba3-99f1-8532ed832dd5" className="">Opic im2</h3>
+          </div>
+          <div id="ac9e7b71-e9a7-4276-b167-51e44781fc1c" style={{width: '56.25%'}} className="column">
+            <ul id="36b762f2-f232-4e52-bd73-17cfbe3a72bc" className="bulleted-list">
+              <li>2021.10.08 취득</li>
             </ul>
           </div>
         </div>
