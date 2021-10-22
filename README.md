@@ -19,7 +19,7 @@
 - Typescript
 - MySQL
 
-## depoy
+## deploy
 - AWS EC2
 
 ## 기능
