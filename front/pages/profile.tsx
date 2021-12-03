@@ -15,71 +15,71 @@ const Wrapper = styled.div`
   margin: 30px;
 `;
 
-const columns = [
-  {
-    title: '학교',
-    dataIndex: '학교',
-    key: '학교',
-    render: (text:any) => <a>{text}</a>,
-  },
-  {
-    title: '전공',
-    dataIndex: '전공',
-    key: '전공',
-  },
-  {
-    title: '기간',
-    dataIndex: '기간',
-    key: '기간',
-  },
-  {
-    title: '구분',
-    key: '구분',
-    dataIndex: '구분',
-    render: (tags:any) => (
-      <>
-        {tags.map((tag:any) => {
-          let color = tag.length > 5 ? 'geekblue' : 'green';
-          // if (tag === '중퇴') {
-          //   color = 'volcano';
-          // }
-          return (
-            <Tag color={color} key={tag}>
-              {tag.toUpperCase()}
-            </Tag>
-          );
-        })}
-      </>
-    ),
-  },
-];
+// const columns = [
+//   {
+//     title: '학교',
+//     dataIndex: '학교',
+//     key: '학교',
+//     render: (text:any) => <a>{text}</a>,
+//   },
+//   {
+//     title: '전공',
+//     dataIndex: '전공',
+//     key: '전공',
+//   },
+//   {
+//     title: '기간',
+//     dataIndex: '기간',
+//     key: '기간',
+//   },
+//   {
+//     title: '구분',
+//     key: '구분',
+//     dataIndex: '구분',
+//     render: (tags:any) => (
+//       <>
+//         {tags.map((tag:any) => {
+//           let color = tag.length > 5 ? 'geekblue' : 'green';
+//           // if (tag === '중퇴') {
+//           //   color = 'volcano';
+//           // }
+//           return (
+//             <Tag color={color} key={tag}>
+//               {tag.toUpperCase()}
+//             </Tag>
+//           );
+//         })}
+//       </>
+//     ),
+//   },
+// ];
 
-const data = [
-  {
-    학교: '대구가톨릭대학교 사범대학부속 무학고등학교',
-    전공: '',
-    기간: '2010. 3 ~ 2013. 2',
-    구분: ['졸업'],
-  },
-  {
-    학교: '',
-    전공: '',
-    기간: '2014. 10. 27 ~ 2016. 7.26',
-    구분: ['해병대 전역'],
-  },
-  {
-    학교: '대구가톨릭대학교',
-    전공: '컴퓨터공학',
-    기간: '2017. 3 ~ 2021. 2',
-    구분: ['졸업', '3.58 / 4.5'],
-  },
-  {
-    학교: 'Angelo State University',
-    전공: 'Computer Science',
-    기간: '2019. 1 ~ 2019. 5',
-    구분: ['교환학생'],
-  },
-];
+// const data = [
+//   {
+//     학교: '대구가톨릭대학교 사범대학부속 무학고등학교',
+//     전공: '',
+//     기간: '2010. 3 ~ 2013. 2',
+//     구분: ['졸업'],
+//   },
+//   {
+//     학교: '',
+//     전공: '',
+//     기간: '2014. 10. 27 ~ 2016. 7.26',
+//     구분: ['해병대 전역'],
+//   },
+//   {
+//     학교: '대구가톨릭대학교',
+//     전공: '컴퓨터공학',
+//     기간: '2017. 3 ~ 2021. 2',
+//     구분: ['졸업', '3.58 / 4.5'],
+//   },
+//   {
+//     학교: 'Angelo State University',
+//     전공: 'Computer Science',
+//     기간: '2019. 1 ~ 2019. 5',
+//     구분: ['교환학생'],
+//   },
+// ];
 
 const Profile: React.FunctionComponent = () => {
   const dispatch = useDispatch();
