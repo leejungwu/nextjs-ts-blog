@@ -126,7 +126,7 @@ const AppLayout: FC = ({ children }) => {
                                     </ListItem>
                                     <ListItem button>
                                         <Link href="/category/interview">
-                                            <ListItemText primary="면접준비" style={{ maxWidth:'72px'}}/>
+                                            <ListItemText primary="CS" style={{ maxWidth:'72px'}}/>
                                         </Link>
                                         <Button>{interviewPosts.length}</Button>
                                     </ListItem>
