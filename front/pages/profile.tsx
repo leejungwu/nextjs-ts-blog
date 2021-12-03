@@ -113,17 +113,17 @@ const Profile: React.FunctionComponent = () => {
                 </div>
                 <div id="52ba94c0-aad7-4362-a36a-491935dfca29" style={{ width: '62.5%' }} className="column">
                   <ul id="65de9c12-8471-4fa8-b394-4458daf5d94e" className="bulleted-list">
-                    <li>1995년 1월 11일생</li>
+                    <li>이정우</li>
                   </ul>
                   <ul id="f6c6ada7-71a2-4f98-bcb8-169a29715b6b" className="bulleted-list">
-                    <li>사람들에게 필요한 것이 무엇인지 고민하는 개발자</li>
+                    <li>1995년 1월 11일생</li>
                   </ul>
-                  <ul id="4d03db83-f280-4957-9a67-f1922ccc0259" className="bulleted-list">
+                  {/* <ul id="4d03db83-f280-4957-9a67-f1922ccc0259" className="bulleted-list">
                     <li>꾸준하게 자기개발하는 개발자</li>
                   </ul>
                   <ul id="902553d0-cb13-4281-9054-2c9f9b3d5681" className="bulleted-list">
                     <li>성능개선에 대해 항상 고민하는 개발자</li>
-                  </ul>
+                  </ul> */}
                   <p id="fd2b1d80-0d0b-4380-9de1-a8c2feeab4d5" className=""></p>
                 </div>
               </div>
@@ -139,9 +139,9 @@ const Profile: React.FunctionComponent = () => {
                 <ul id="dab6307d-b211-4df7-a04a-382c9576f4d3" className="bulleted-list">
                   <li>Github | <a href="https://github.com/leejungwu">https://github.com/leejungwu</a></li>
                 </ul>
-                <ul id="6b9be42e-24e0-4f34-8351-64ce18b4d596" className="bulleted-list">
+                {/* <ul id="6b9be42e-24e0-4f34-8351-64ce18b4d596" className="bulleted-list">
                   <li>Blog | <a href="https://ljw538.tistory.com">https://ljw538.tistory.com</a></li>
-                </ul>
+                </ul> */}
                 <ul id="00038aa6-d7be-4d36-92a9-99b1b32b9317" className="bulleted-list">
                   <li>010-8250-8811</li>
                 </ul>
@@ -164,10 +164,7 @@ const Profile: React.FunctionComponent = () => {
                 <li>Typescript</li>
               </ul>
               <ul id="4f4d5950-65cc-4652-978a-9cd80e07f9ae" className="bulleted-list">
-                <li>Visual Studio Code</li>
-              </ul>
-              <ul id="c5836529-f5ae-470f-83e2-093971441aa1" className="bulleted-list">
-                <li>Git</li>
+                <li>Nestjs</li>
               </ul>
             </div>
           </div>
@@ -186,7 +183,7 @@ const Profile: React.FunctionComponent = () => {
                 <li>React</li>
               </ul>
               <ul id="da05a269-c795-44f9-bc03-601fa91d6278" className="bulleted-list">
-                <li>Redux(saga)</li>
+                <li>Redux</li>
               </ul>
             </div>
           </div>
@@ -207,7 +204,7 @@ const Profile: React.FunctionComponent = () => {
             </div>
           </div><p id="96835fee-f110-4536-895c-f80fec0782a6" className=""></p>
           <h1 id="5080fd56-ad70-460d-af35-a62de10374b8" className="">
-            <mark className="highlight-blue">Personal Experience &amp; Projects</mark>
+            <mark className="highlight-blue">Personal Projects</mark>
           </h1>
           <hr id="786b70de-d0c5-47f6-b9f6-d62e3c35dfb8"/>
           <div id="f235f424-0ea4-4c29-8bc5-c247616e1f95" className="column-list">
@@ -223,7 +220,7 @@ const Profile: React.FunctionComponent = () => {
             </div>
           <div id="8ed5af46-edda-4554-8527-76b4cd54afab" style={{width: '50%'}} className="column">
             <ul id="5e865cae-4d5b-408a-80a8-f959bf13254c" className="bulleted-list">
-              <li>블로그로 사용하기 위해 개발한 게시판형식의 프로젝트</li>
+              <li>블로그 프로젝트</li>
             </ul>
             <ul id="78920cbc-dd3f-4b90-b3e4-f64380c311cc" className="bulleted-list">
               <li>Frontend
@@ -251,7 +248,7 @@ const Profile: React.FunctionComponent = () => {
             </ul>
             </div>
           </div>
-          <div id="65b54ce7-eacb-48ec-a899-05bdc9101730" className="column-list">
+          {/* <div id="65b54ce7-eacb-48ec-a899-05bdc9101730" className="column-list">
             <div id="ae067b44-d330-4bdc-97ed-1d6967210be5" style={{width: '50%'}} className="column">
               <h3 id="4b0056c9-1a21-4d08-b866-adc222c1fc2e" className="">
                 학과동아리 I-keeper
@@ -302,8 +299,8 @@ const Profile: React.FunctionComponent = () => {
               </ul>
             <p id="237e2bc8-7eaa-4e9f-a05b-9cc9e21b4fb3" className=""></p>
           </div>
-        </div>
-        <h1 id="de132420-8918-4cff-ac15-3927f3100614" className="">
+        </div> */}
+        {/* <h1 id="de132420-8918-4cff-ac15-3927f3100614" className="">
           <mark className="highlight-blue">Education</mark>
         </h1>
         <hr id="0a3d7a48-7fcc-4fde-8f51-4ff7307fe6a4"/>
@@ -334,14 +331,14 @@ const Profile: React.FunctionComponent = () => {
         </div>
         <div id="d91c2e31-1696-4d8b-be71-ccdef258c0bb" className="column-list">
           <div id="201e9705-5063-4f4a-938b-ff6ff195a8e9" style={{width: "43.75%"}} className="column">
-            <h3 id="003d4442-0027-4ba3-99f1-8532ed832dd5" className="">Opic im2</h3>
+            <h3 id="003d4442-0027-4ba3-99f1-8532ed832dd5" className="">OPIc im2</h3>
           </div>
           <div id="ac9e7b71-e9a7-4276-b167-51e44781fc1c" style={{width: '56.25%'}} className="column">
             <ul id="36b762f2-f232-4e52-bd73-17cfbe3a72bc" className="bulleted-list">
               <li>2021.10.08 취득</li>
             </ul>
           </div>
-        </div>
+        </div> */}
         <p id="7696d149-cc5f-44c1-81ae-4e529a3a7a18" className=""></p>
         </div>
       </article>
