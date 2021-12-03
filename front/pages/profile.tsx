@@ -6,7 +6,7 @@ import wrapper from '../store/configureStore';
 import styled from 'styled-components';
 import { END } from 'redux-saga';
 import axios from 'axios';
-import { Tag } from 'antd';
+// import { Tag } from 'antd';
 import { LOAD_MY_INFO_REQUEST } from '../reducers/user';
 import { LOAD_POSTS_REQUEST } from '../reducers/post';
 import { RootState } from '../interface/rootstate';
